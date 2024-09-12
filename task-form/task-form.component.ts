@@ -16,6 +16,7 @@ export class TaskFormComponent {
   constructor(private taskService: TaskService) {}
 
   addTask() {
+    //trim = cleaning up user input or ensuring consistent formatting
     if (this.taskName.trim()) {
       const newTask: Task = {
         id: Date.now(),

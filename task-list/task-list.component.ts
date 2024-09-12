@@ -17,11 +17,16 @@ export class TaskListComponent implements OnInit {
 
   constructor(private taskService: TaskService) {}
 
+  //fetching data from a service
   ngOnInit(): void {
     this.tasks = this.taskService.getTasks();
   }
 
   markCompleted(id: number) {
     this.taskService.markTaskCompleted(id);
+  }
+
+  deleteTask(id:number){
+    this.taskService.deleteTask(id);
   }
 }

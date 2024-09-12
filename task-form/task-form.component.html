@@ -1,4 +1,16 @@
-<form (ngSubmit)="addTask()" #taskForm="ngForm">
-  <input type="text" [(ngModel)]="taskName" name="taskName" required minlength="3" placeholder="Enter task name" />
-  <button type="submit" [disabled]="!taskForm.valid">Add Task</button>
-</form>
+<div class="task-card">
+  <form (ngSubmit)="addTask()" #taskForm="ngForm">
+    <h3>Add Task</h3>
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="taskName"
+        name="taskName"
+        required
+        minlength="3"
+        placeholder="Enter task name"
+      />
+      <button type="submit" [disabled]="!taskForm.valid">Add Task</button>
+    </div>
+  </form>
+</div>

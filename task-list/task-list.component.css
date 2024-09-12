@@ -1,0 +1,59 @@
+
+
+/* Task List Styles */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-info strong {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.task-info span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Task List Button */
+.completeBtn {
+  background-color: #28a745;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.completeBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

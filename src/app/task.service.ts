@@ -22,12 +22,11 @@ export class TaskService {
     }
   }
 
-  filterTasks(status :'all' | 'completed' | 'pending'):Task[]{
-    if(status === 'completed'){
-      return this.tasks.filter(t=>t.completed);
-    }else if (status === 'pending'){
-      return this.tasks.filter(t => !t.completed);
+  deleteTask(id:number):void{
+    const index = this.tasks.findIndex(t => t.id === id);
+    if(index !== -1){
+      this.tasks.splice(index,1);
     }
-    return this.tasks;
   }
+
 }
