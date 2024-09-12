@@ -4,11 +4,21 @@
     <li *ngFor="let task of tasks">
       <div class="task-item">
         <div class="task-info">
-          <strong>{{ task.title }}</strong>
+          <!-- Conditionally show input or text -->
+          <strong *ngIf="!task.isEditing">{{ task.title }}</strong>
+          <input *ngIf="task.isEditing" [(ngModel)]="task.title" />
+
           <span>{{ task.completed ? 'Completed' : 'Pending' }}</span>
         </div>
         <div class="task-actions">
-          <button (click)="markCompleted(task.id)" [disabled]="task.completed" class="completeBtn">
+          <!-- Edit Button -->
+          <button *ngIf="!task.isEditing" (click)="editTask(task)">
+            Edit
+          </button>
+          <button *ngIf="task.isEditing" (click)="saveTask(task)">
+            Save
+          </button>
+          <button (click)="markCompleted(task.id)" [disabled]="task.completed">
             Complete
           </button>
           <button (click)="deleteTask(task.id)" class="delete-button">
